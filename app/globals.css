@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+*{
+  transition: all 0.5s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+nav .links ul li{
+  list-style: none;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+  
+
+.links ul li{
+  list-style: none;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+cursor: pointer;  
+
+}
+  
+
+
+nav .links ul li:hover::after{
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+cursor: pointer;  
+}
+
+.links ul li:hover::after{
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+cursor: pointer;  
+}
+
+nav .links ul li:after {
+content: '';
+position: absolute;
+left: 0;
+bottom: 0;
+right: 0;
+border-radius: 30px;
+height: 5px;
+width: 0%;
+/* background: rgb(235,90,0); */
+background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+
+.links ul li:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 30px;
+  height: 5px;
+  width: 0%;
+  /* background: rgb(235,90,0); */
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  }
+
+.hr15{
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transform: rotate(-50deg);
+}
+
+
+.hr15:hover{
+  transform: scale(1.2);
+}
+
+.hr105{
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transform: rotate(0);
+  margin-top: 500px;
+}
+
+
+
+.hr105:hover{
+  transform: scale(1.2);
+}
+
+.square {
+  display: inline-block;
+  text-align: center;
+  width: 10vh;
+  height: 10vh;
+  position: absolute;
+  background-color: #fff;
+  border: 5px solid transparent;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-size: 100% 100%, 100% 100%;
+  top: 0;
+  right: 25vh;
+  border-radius: 15px;
+  color: transparent;
+}
+
+
+.triangle {
+  position: absolute;
+  width: 25vh;
+  height: 25vh;
+  border-left: 12.5vh solid transparent;
+  border-right: 12.5vh solid transparent;
+  border-bottom: 25vh solid #fff;
+  top: 20vh;
+  right: 25vh;
+}
+
+
+
+.circle{
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  border: 5px solid transparent;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-size: 100% 100%, 100% 100%;
+  width: 10vh;
+  height: 10vh;
+  top: 10vh;
+  right: 30vh;
+  border-radius: 100%;
+}
+
+
+.circle:hover{
+transform: scale(1.2);
+  cursor: pointer;
+}
+
+.square:hover{
+  transform: scale(1.2);
+    cursor: pointer;
+  }
+
+.about-image{
+  background-color: #fff;
+  border: 5px solid transparent;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-size: 100% 100%, 100% 100%;  
+  border-radius: 17px;
+  transform: scale(1.5);
+}
+
+.about-image:hover{
+  transform: scale(1.8);
+}
+
+.hr1{
+  background-color: #fff;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-size: 100% 100%, 100% 100%;
+position: relative;
+left: 0;
+/* transform: rotate(180deg); */
+
+}
+
+.text-skill .skill ul li :hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+.hr12165:hover{
+  transform: scale(1.1);
+}
+
+
+.project-card{
+  background-color: #fff;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-size: 100% 100%, 100% 100%;
+  border-radius: 30px;
+}
+
+.service{
+  background-color: #fff;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-size: 100% 100%, 100% 100%;
+  border-radius: 30px;
+}
+
+.success{
+  animation: slideIn 7s ease forwards infinite;
+  animation-delay: 65s;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
