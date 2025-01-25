@@ -5,7 +5,7 @@ import Script from "next/script";
 
 const ProjectCard = (props) => {
   return (
-    <div className='w-[50vh] h-[60vh] border flex flex-col project-card items-center hover:scale-110 hover:translate-y-[-5rem] hover:cursor-pointer'>
+    <div className='lg:w-[25%] w-[90%] lg:h-[80vh] h-[60vh] service border rounded-lg flex flex-col items-center justify-evenly hover:scale-110 hover:translate-y-[-5rem] cursor-pointer '>
   <Image
                 src={props.image || "../../public/project 1 Ma Durga.png"} 
                 width={100} 

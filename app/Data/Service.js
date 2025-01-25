@@ -3,7 +3,7 @@ export const ServiceData = [
         id:1,
         title:"Web Development",
         className:"fa-solid fa-code fa-flip",
-        description:"I Give My Best Using Top technologies  like : NextJS,ReactJs,HTML5,CSS3,JavaScript,Backend and WordPress."
+        description:"I Give My Best Using Top technologies."
     },{
         id:2,
         title:"Logo Design",

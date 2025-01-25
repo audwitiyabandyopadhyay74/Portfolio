@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 
 const ContactMe = () => {
   const [result, setResult] = React.useState(null);
+  const [messageShown, setMessageShown] = React.useState(false);
   const checkRef = React.useRef(null);
 
   const handleSubmit = async (event) => {
@@ -32,7 +33,10 @@ const ContactMe = () => {
 
       if (result.success) {
         setResult(result.success);
-        toggleSuccessMessage();
+        if (!messageShown) {
+          toggleSuccessMessage();
+          setMessageShown(true);
+        }
         console.log(result);
       } else {
         console.error("Submission failed:", result.message);
@@ -50,21 +54,26 @@ const ContactMe = () => {
       { opacity: 0, y: -50 },
       { opacity: 1, y: 0, duration: 1 }
     );
+
+    setTimeout(() => {
+      checkRef.current.classList.remove("visible");
+      checkRef.current.classList.add("invisible");
+    }, 5000); // Change 5000 to the duration (in milliseconds) you want the success message to be visible
   };
 
   React.useEffect(() => {
-    if (result) {
+    if (result && !messageShown) {
       gsap.fromTo(
         checkRef.current,
         { opacity: 0, y: -50 },
         { opacity: 1, y: 0, duration: 1 }
       );
     }
-  }, [result]);
+  }, [result, messageShown]);
 
   return (
     <>
-      <div className="w-screen h-auto flex flex-col items-center justify-between gap-10 p-4 lg:mt-[20vh] mt-[50vh] ">
+      <div className="lg:w-screen w-[150%] h-[200vh] lg:h-auto flex flex-col items-center align-middle center justify-center mt-20">
         <span className="contact-title text-4xl md:text-8xl uppercase font-bold mt-16">
           Contact Me
         </span>
@@ -77,36 +86,36 @@ const ContactMe = () => {
             <input
               type="text"
               name="Name"
-              className="border-0 shadow-md w-full md:w-[80vh] h-12 md:h-[6vh] outline-none rounded-md border-black p-4"
+              className="border-0 w-[95%] shadow-md lg:w-full md:w-[80vh] h-12 md:h-[6vh] outline-none rounded-md border-black p-4"
               placeholder="Enter Your Name"
             />
             <input
               type="email"
               name="Email"
-              className="border-0 w-full md:w-[80vh] shadow-md h-12 md:h-[6vh] outline-none rounded-md border-black p-4"
+              className="border-0 w-[95%] md:w-[80vh] shadow-md h-12 md:h-[6vh] outline-none rounded-md border-black p-4"
               placeholder="Enter Your Email"
             />
             <textarea
               name="Message"
-              className="border-0 shadow-md resize-none border-black w-full md:w-[80vh] h-32 md:h-[185px] outline-none rounded-md bg-[#f8f8f8e1] p-4"
+              className="border-0 w-[95%] shadow-md resize-none border-black lg:w-full md:w-[80vh] h-32 md:h-[185px] outline-none rounded-md bg-[#f8f8f8e1] p-4"
               placeholder="Message Here!"
             ></textarea>
-            <button className="w-full md:w-[40vh] h-12 md:h-[6vh] bg-black text-white rounded-md hover:scale-110">
+            <button className="w-[40vh] md:w-[40vh] h-12 md:h-[6vh] bg-black text-white rounded-md hover:scale-110">
               Send
             </button>
           </form>
         </div>
       </div>
       <div
-        className="success w-screen h-[90vh] flex flex-col items-center justify-center invisible absolute"
+        className="success lg:w-screen w-[150%] h-[200vh] lg:h-auto flex flex-col items-center align-middle center justify-center mt-20 invisible"
         ref={checkRef}
       >
-        <div className="rounded-full w-[30vh] h-[30vh] bg-green-600 flex flex-col items-center justify-center text-8xl ">
+        <div className="rounded-full w-[30vh] h-[30vh] bg-green-600 flex flex-col items-center justify-center text-8xl">
           <i className="fa-check fa-solid text-white"></i>
         </div>
-        <div className="text">
-          <span className="font-semibold text-5xl">
-            {result ? "Message sent successfully!" : ""}
+        <div className="lg:w-screen w-[95%] h-[10vh] lg:h-auto flex flex-col items-center align-middle center justify-center mt-20">
+          <span className="font-semibold text-5xl text-center w-7.2 h-max">
+            {result ? "Message Sent Successfully!" : ""}
           </span>
         </div>
       </div>
