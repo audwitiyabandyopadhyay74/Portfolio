@@ -73,14 +73,14 @@ const ContactMe = () => {
 
   return (
     <>
-      <div className="lg:w-screen w-[150%] h-[200vh] lg:h-auto flex flex-col items-center align-middle center justify-center mt-20">
+      <div className="w-screen  h-[200vh] lg:h-auto flex flex-col items-center align-middle center justify-center mt-20">
         <span className="contact-title text-4xl md:text-8xl uppercase font-bold mt-16">
           Contact Me
         </span>
         <div className="contact-subtitle text-xl md:text-2xl font-bold">Get In Touch</div>
         <div className="w-full md:w-[80%] h-auto flex items-center justify-center">
           <form
-            className="contact-form w-full md:w-auto h-max flex flex-col gap-4 md:gap-8 items-center"
+            className="contact-form w-[100%] md:w-auto h-max flex flex-col gap-4 md:gap-8 items-center"
             onSubmit={handleSubmit}
           >
             <input

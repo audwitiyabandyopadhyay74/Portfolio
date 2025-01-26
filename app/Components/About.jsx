@@ -3,7 +3,7 @@ import Image from 'next/image'
 import img from '../../public/my.png'
 const About = () => {
   return (
-    <div className= ' lg: relative w-screen h-[130vh] lg:h-auto mt-[150vh] lg:mt-[100vh] overflow-hidden flex items-center gap-[100px] justify-center '>
+    <div className= ' lg: relative w-screen h-[150vh] lg:h-auto mt-[150vh] lg:mt-[100vh] overflow-hidden flex items-center gap-[100px] justify-center '>
         <div className=" invisible lg:visible   about-image border-[0px] rounded-lg resize  w-[20vh] flex items-center  justify-center h-[40vh]">
 <Image src={img} width={100}/>
         </div>
