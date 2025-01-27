@@ -7,7 +7,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className={`w-screen h-24 flex items-center justify-between lg:gap-1 gap-[58%] fixed top-[1vh] z-50 ${isMenuOpen?"bg-white mt-[-1vh]":""}`}>
+      <nav className={`w-screen h-24 flex items-center justify-between lg:gap-1 gap-[40%] fixed top-[1vh] z-50 ${isMenuOpen?"bg-white mt-[-1vh]":""}`}>
         <div className="logo text-2xl font-bold p-4">
           Portfolio
         </div>
